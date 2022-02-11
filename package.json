@@ -1,0 +1,29 @@
+{
+  "name": "expense-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijay810/expense-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vijay810/expense-backend/issues"
+  },
+  "homepage": "https://github.com/vijay810/expense-backend#readme",
+  "description": ""
+}
