@@ -60,6 +60,18 @@ app.get('/', cors(), async(req, res) =>{
     }
 });
 
+app.post('/saveExpense',cors(), async(req,res)=> {
+    console.log(req.body);
+    {
+        try{
+            await ExpenseModel(req.body).save()
+            
+            res.send({code:1, msg:"Expense saved"});
+        }catch(err){
+            console.log(err)
+        }
+    }
+})
 
 app.use((req, res) => { 
     res.status(404).send(" <p> Page not found </p>");
