@@ -73,6 +73,33 @@ app.post('/saveExpense',cors(), async(req,res)=> {
     }
 })
 
+//13-02-2022
+app.delete('/deleteExpense/:id', cors(), async(req,res)=>{
+    try{
+        const{id} =req.params;
+        await ExpenseModel.findByIdAndDelete({_id: id});
+        res.send({code:1, msg: 'Deleted Successfully'});
+
+    }catch(err){
+        res.send({code:0, msg:err.message})
+    }
+});
+
+app.put('/editExpense/:id', cors(), async(req,res)=>{
+    try{
+        const{expName,expAmt, expDate}= req.body;
+        console.log(expName)
+        const{id} =req.params;
+        const expense = await ExpenseModel.findByIdAndUpdate({_id: id},{expName,expAmt,expDate});
+        await ExpenseModel.save()
+        res.send({code:1, msg: 'Updated Successfully'});
+
+    }catch(err){
+        res.send({code:0, msg:err.message})
+    }
+});
+
+
 app.use((req, res) => { 
     res.status(404).send(" <p> Page not found </p>");
 

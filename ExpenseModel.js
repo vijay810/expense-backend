@@ -12,7 +12,7 @@ const ExpenseSchema = new Schema(
         type: Number,
         required: true,
         min: 1,
-        max: 10000
+        max: 50000
     },
     expDate:{
         type: Date,
