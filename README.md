@@ -5,7 +5,7 @@
 
 npm init -y
 
-npm i express mongodb mongoos cors
+npm i express mongodb mongoose cors
 
 npm i -D nodemon
 
